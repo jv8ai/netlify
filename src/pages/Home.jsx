@@ -91,7 +91,7 @@ export default function Home() {
                 <img 
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/348bfecfe_newjvlogo.png"
                   alt="JV8 Logo"
-                  className="h-8 w-auto"
+                  className="h-24 w-auto"
                 />
               </div>
               <button
@@ -105,7 +105,7 @@ export default function Home() {
         </nav>
 
         {/* Main Content */}
-        <main className="pt-16">
+        <main className="pt-8">
           <HeroSection onCTAClick={handleCTAClick} />
           <FeaturesSection />
           <BenefitsSection />
@@ -121,7 +121,7 @@ export default function Home() {
                 <img 
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/348bfecfe_newjvlogo.png"
                   alt="JV8 Logo"
-                  className="h-8 w-auto mr-3 brightness-200"
+                  className="h-24 w-auto mr-3 brightness-200"
                 />
                 <span className="text-lg font-semibold">JV8</span>
               </div>
