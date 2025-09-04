@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles, Users, TrendingUp } from 'lucide-react';
 
 export default function HeroSection({ onCTAClick }) {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-32">
+    <section className="relative overflow-hidden py-20 lg:py-12">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-100"></div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-200/30 to-transparent rounded-full blur-3xl"></div>
