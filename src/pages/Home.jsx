@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { AffiliateClick } from "@/api/entities";
 
-import HeroSection from "../components/landing/HeroSection";
-import FeaturesSection from "../components/landing/FeaturesSection";
-import BenefitsSection from "../components/landing/BenefitsSection";
-import TestimonialsSection from "../components/landing/TestimonialsSection";
-import CTASection from "../components/landing/CTASection";
-import LoadingOverlay from "../components/landing/LoadingOverlay";
+import HeroSection from "@/components/landing/HeroSection";
+import FeaturesSection from "@/components/landing/FeaturesSection";
+import BenefitsSection from "@/components/landing/BenefitsSection";
+import TestimonialsSection from "@/components/landing/TestimonialsSection";
+import CTASection from "@/components/landing/CTASection";
+import LoadingOverlay from "@/components/landing/LoadingOverlay";
 
 export default function Home() {
   const [isTracking, setIsTracking] = useState(false);
