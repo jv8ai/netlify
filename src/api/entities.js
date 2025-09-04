@@ -1,9 +1,9 @@
-export const AffiliateClick = {
-  create: async () => console.log('AffiliateClick.create called')
+export const User = {
+  me: () => Promise.resolve(null),
+  login: () => Promise.resolve(),
+  logout: () => Promise.resolve()
 };
 
-export const User = {
-  me: async () => null,
-  login: async () => console.log('User.login called'),
-  logout: async () => console.log('User.logout called')
+export const AffiliateClick = {
+  create: () => Promise.resolve()
 };
