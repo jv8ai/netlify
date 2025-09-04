@@ -1,35 +1,419 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Base44 APP</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JV8 AI</title>
-    <!-- Your CSS links or inline styles go here -->
+    <title>JV8 - AI Affiliate Platform | Connect with 100 Dream Partners</title>
+    <meta name="description" content="Connect with up to 100 dream partners and build wealth through 8-level affiliate commissions with JV8's AI-powered platform.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo img {
+            width: 64px;
+            height: 64px;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        .logo-subtext {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            margin-bottom: 48px;
+        }
+        
+        .hero-cta .cta-button {
+            font-size: 1.125rem;
+            padding: 16px 32px;
+        }
+        
+        .hero-features {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 64px;
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin: 64px 0;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #4f46e5;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            color: #64748b;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        
+        .features-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 64px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #2563eb 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+        
+        .final-cta p {
+            font-size: 1.25rem;
+            margin-bottom: 48px;
+            opacity: 0.9;
+        }
+        
+        .final-cta .cta-button {
+            background: white;
+            color: #4f46e5;
+            font-size: 1.25rem;
+            padding: 16px 48px;
+        }
+        
+        .final-cta .cta-button:hover {
+            background: #f8fafc;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 48px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .footer-logo img {
+            width: 32px;
+            height: 32px;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- All the content of your landing page goes here -->
-    <!-- (e.g., header, hero, features, testimonials, CTA, footer) -->
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/348bfecfe_newjvlogo.png" alt="JV8 Logo">
+                    <div>
+                        <div class="logo-text">JV8</div>
+                        <div class="logo-subtext">AI Affiliate Platform</div>
+                    </div>
+                </div>
+                <button class="cta-button" onclick="window.location.href__='https://jv8.co/#/Welcome'">
+                    Get Started Free
+                </button>
+            </div>
+        </div>
+    </nav>
 
-    <!-- The JavaScript code goes here, usually before the closing </body> tag -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Connect with 100<br>Dream Partners</h1>
+            <p>Join the most exclusive business network where AI connects you with your ideal partners, and an 8-level commission structure turns relationships into recurring revenue.</p>
+            
+            <div class="hero-cta">
+                <button class="cta-button" onclick="window.location.href__='https://jv8.co/#/Welcome'">
+                    Start Building Your Network →
+                </button>
+            </div>
+            
+            <div class="hero-features">
+                ✓ Free to join • ✓ No credit card required • ✓ Start connecting in minutes
+            </div>
+
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">100</div>
+                    <div class="stat-label">Dream Connections</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Levels Deep</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">AI Working</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Growth Potential</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why JV8 Changes Everything</h2>
+            <p class="features-subtitle">Traditional networking is broken. We've built something better.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Connect with 100 Dream Partners</h3>
+                    <p>Build meaningful business relationships with up to 100 carefully curated partners who align with your goals and values.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>8-Level Commission Structure</h3>
+                    <p>Earn recurring commissions up to 8 levels deep. Build a passive income stream that grows with your network.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>AI-Powered Growth Engine</h3>
+                    <p>Our advanced AI automatically finds perfect matches, sends connection requests, and nurtures relationships 24/7.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Precision Matching</h3>
+                    <p>Advanced algorithms ensure you're connected only with high-quality prospects who genuinely complement your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Join thousands of successful entrepreneurs who are building wealth through strategic partnerships. Your network is your net worth.</p>
+            <button class="cta-button" onclick="window.location.href__='https://jv8.co/#/Welcome'">
+                Start Your Journey Today
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/348bfecfe_newjvlogo.png" alt="JV8 Logo">
+                    <div>
+                        <div style="font-weight: bold; font-size: 1.125rem;">JV8</div>
+                        <div style="font-size: 0.875rem; color: #94a3b8;">AI Affiliate Platform</div>
+                    </div>
+                </div>
+                <div style="color: #94a3b8; font-size: 0.875rem;">
+                    © 2025 JV8. All rights reserved. • Building the future of business relationships.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Affiliate Tracking JavaScript -->
     <script>
-        // Add this to your jv8.ai landing page JavaScript
         async function processAffiliateClick() {
             const urlParams = new URLSearchParams(window.location.search);
             const trackingCode = urlParams.get('ref');
             
             if (trackingCode) {
                 try {
+                    console.log('Processing affiliate tracking for code:', trackingCode);
+                    
                     // Call your tracking function
                     const response = await fetch('https://jv8.co/functions/trackAffiliateClick', {
                         method: 'POST',
@@ -44,33 +428,18 @@
                     const result = await response.json();
                     
                     if (result.success) {
-                        // Store referral for attribution and redirect
+                        // Store referral for attribution
                         localStorage.setItem('jv8_referral_id', result.affiliateId);
-                        
-                        // Redirect after 2 seconds to allow tracking
-                        setTimeout(() => {
-                            window.location.href = `https://jv8.co/#/Welcome?referrer=${result.affiliateId}`;
-                        }, 2000);
+                        console.log('Affiliate tracking completed successfully');
                     }
                 } catch (error) {
                     console.error('Error tracking affiliate click:', error);
-                    // Still redirect even if tracking fails
-                    setTimeout(() => {
-                        window.location.href = 'https://jv8.co/#/Welcome';
-                    }, 2000);
                 }
-            } else {
-                // If no tracking code, still redirect after a short delay
-                setTimeout(() => {
-                    window.location.href = 'https://jv8.co/#/Welcome';
-                }, 2000);
             }
         }
 
-        // Run on page load
+        // Run affiliate tracking on page load
         document.addEventListener('DOMContentLoaded', processAffiliateClick);
     </script>
 </body>
-</html>
-  </body>
 </html>
